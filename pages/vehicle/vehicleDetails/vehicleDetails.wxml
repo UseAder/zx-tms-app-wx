@@ -1,0 +1,192 @@
+<view class="page">
+  <view class="page__hd">
+    <image src="{{lunbanner}}" class="slide-image" />
+    <view class='page__hd-bdCenter'>
+
+      <block wx:if="{{vehicleDetailsFun.carPz.status==1}}">
+        <text class='J-Golden'>等待发车</text>
+      </block>
+      <block wx:elif="{{vehicleDetailsFun.carPz.carPz.m.status==5}}">
+        <text class='J-Golden'>运输中</text>
+      </block>
+      <block wx:elif="{{vehicleDetailsFun.carPz.status==10}}">
+        <text class='J-fff'>已到站 </text>
+      </block>
+      <view class='page__hd-bdCenter-dao'>
+        <view class='page__hd-bdCenter-daoXain'></view>
+        <view class='page__hd-bdCenter-daoSan'></view>
+      </view>
+    </view>
+    <view class='page__hd-bd'>
+      <view class='page__hd-bd-left'>
+        <view class='page__hd-bd-frist'>
+          <view class='inline-block'>
+            <image src="{{dili}}" />
+            <view class=" inline-block">{{vehicleDetailsFun.carPz.beginNetworkName?vehicleDetailsFun.carPz.beginNetworkName:''}}</view>
+          </view>
+        </view>
+        <view>发车时间
+        </view>
+        <view>
+          <view class=" inline-block">{{vehicleDetailsFun.carPz.leaveTime?vehicleDetailsFun.carPz.leaveTime:''}}</view>
+        </view>
+      </view>
+      <view class='page__hd-bd-right'>
+        <view class='page__hd-bd-frist'>
+          <view class='inline-block'>
+            <image src="{{dili}}" />
+            <view class=" inline-block">{{vehicleDetailsFun.carPz.endNetworkName?vehicleDetailsFun.carPz.endNetworkName:''}}</view>
+          </view>
+        </view>
+        <view>到车时间
+        </view>
+        <view>
+          <view class=" inline-block" >{{vehicleDetailsFun.carPz.arriveTime?vehicleDetailsFun.carPz.arriveTime:''}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__nav">
+    <view class="page__nav-list">
+      <view class="page__nav-list-title">
+        <view class='inline-block xian'></view>基本信息
+      </view>
+      <view class="page__nav-list-title">
+        配载单号：
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.stowageNo}}'>{{vehicleDetailsFun.carPz.stowageNo}}</view>
+      </view>
+      <view class="page__nav-list-title">
+        票数：
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.waybillNum}}'>{{vehicleDetailsFun.carPz.waybillNum}}</view>
+      </view>
+      <view class="page__nav-list-title">
+        车牌：
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.plateNumber}}'>{{vehicleDetailsFun.carPz.plateNumber}}</view>
+      </view>
+      <view class="page__nav-list-title">
+        司机：
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.driverName}}'>{{vehicleDetailsFun.carPz.driverName}}</view>
+      </view>
+      <view class="page__nav-list-title">
+        司机手机:
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.driverMobile}}'>{{vehicleDetailsFun.carPz.driverMobile}}</view>
+      </view>
+      <view class="page__nav-list-title">
+        备注：
+        <view class=" inline-block" wx:if='{{vehicleDetailsFun.carPz.memo}}'>{{vehicleDetailsFun.carPz.memo}}</view>
+      </view>
+    </view>
+    <view class="page__nav-list">
+      <view class="page__nav-list-title">
+        <view class='inline-block xian'></view>费用：
+      </view>
+      <view class="page__nav-list-title">
+        现付：
+        <view class=" inline-block">{{vehicleDetailsFun.carPz.xfFee?vehicleDetailsFun.carPz.xfFee:0}}元</view>
+      </view>
+      <view class="page__nav-list-title">
+        现付油卡：
+        <view class=" inline-block">{{vehicleDetailsFun.carPz.xfOilFee?vehicleDetailsFun.carPz.xfOilFee:0}}元</view>
+      </view>
+      <view class="page__nav-list-title">
+        到付：
+        <view class=" inline-block">{{vehicleDetailsFun.carPz.dfFee?vehicleDetailsFun.carPz.dfFee:0}}元</view>
+      </view>
+      <view class="page__nav-list-title">
+        回付：
+        <view class=" inline-block">{{vehicleDetailsFun.carPz.hfFee?vehicleDetailsFun.carPz.hfFee:0}}元</view>
+      </view>
+      <!-- <view class="page__nav-list-title">
+        整车毛利：
+        <view class=" inline-block"></view> -->
+      <!-- </view> -->
+      <view class="page__nav-list-title">
+
+      </view>
+
+    </view>
+  </view>
+
+  <view class="page__bd">
+    <view class="page__cell page__cell-nav">
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>运单清单
+      </view>
+    </view>
+
+    <block wx:for="{{vehicleDetailsFun.waybillList}}" wx:key='this'>
+      <view class="page__cell" catchtap="waybillsList" data-id="{{item.id}}">
+        <view class='waybillListXuHao'>
+          {{index+1}}
+        </view>
+
+        <view class="weui-cell page-cell-title" >
+          <view class="weui-cell__bd">
+            单号：
+            <view class=" inline-block" wx:if='{{item.waybillNo}}'>{{item.waybillNo}}</view>
+          </view>
+          <view class="weui-cell__ft">
+            <block wx:if="{{item.status==1}}">
+              <text class='J-Golden'>未装车</text>
+              <image src='{{back}}'></image>
+            </block>
+            <block wx:elif="{{item.status==5}}">
+              <text class='J-Golden'>等待发车</text>
+              <image src='{{back}}'></image>
+            </block>
+            <block wx:elif="{{item.status==10}}">
+              <text class='J-Golden'>运输中</text>
+              <image src='{{back}}'></image>
+            </block>
+            <block wx:elif="{{item.status==15}}">
+              <text class='J-Golden'>已到站</text>
+              <image src='../../../images/back.png'></image>
+            </block>
+            <block wx:elif="{{item.status==-1}}">
+              <text class='J-Golden'>作废</text>
+              <image src='{{back}}'></image>
+            </block>
+            <block wx:elif="{{item.status==20}}">
+              <text class='J-completed'>已中转</text>
+              <image src='{{back}}'></image>
+            </block>
+            <block wx:elif="{{item.status==25}}">
+              <text class='J-completed'>已签收</text>
+              <image src='{{back1}}'></image>
+            </block>
+          </view>
+        </view>
+        <view class="weui-cell page-cell-body">
+          <view class="bd-body-ul">
+            <view class="bd-body-ul-body">
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>货物：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.goodsName}}'>{{item.goodsName}}</view>
+                <view class=" inline-block" wx:if='{{item.goodsNum}}'>，{{item.goodsNum}}件</view>
+                <view class=" inline-block" wx:if='{{item.goodsWeight}}'>，{{item.goodsWeight}}千克</view>
+                <view class=" inline-block" wx:if='{{item.goodsBulk}}'>，{{item.goodsBulk}}立方</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>运费：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.totalFee}}'> {{item.totalFee}}元</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>线路：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.beginSiteName}}'> {{item.beginSiteName}}--</view>
+                <view class=" inline-block" wx:if='{{item.endSiteName}}'> {{item.endSiteName}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </block>
+
+  </view>
+</view>

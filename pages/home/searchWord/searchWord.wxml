@@ -1,0 +1,96 @@
+<scroll-view scroll-y scroll-top='{{scrollTopNum}}' bindscrolltolower="scrollReachBottom" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+<view class="page__bd" >
+  <block wx:if='{{records!=""}}'>
+
+    <block wx:for="{{records}}" wx:key='this' >
+      <view class="page__cell" data-id="{{item.id}}" catchtap="waybillsList">
+        <view class="weui-cell page-cell-title">
+          <view class="weui-cell__bd">
+            <view class='inline-block xian'></view>单号：{{item.waybill_no}}
+          </view>
+          <view class="weui-cell__ft">
+            <block wx:if="{{item.status==1}}">
+              <text class='J-Golden'>未装车</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==5}}">
+              <text class='J-Golden'>等待发车</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==10}}">
+              <text class='J-Golden'>运输中</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==15}}">
+              <text class='J-Golden'>已到达</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==-1}}">
+              <text class='J-Golden'>作废</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==25}}">
+              <text class='J-completed'>已签收</text>
+              <image src='{{back1Image}}'></image>
+            </block>
+            <block wx:elif="{{item.status==100}}">
+              <text class='J-completed'>到站运单</text>
+              <image src='{{back1Image}}'></image>
+            </block>
+          </view>
+        </view>
+        <view class="weui-cell page-cell-body">
+          <view class="bd-body-ul">
+            <view class="bd-body-ul-body">
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>货物：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.goods_name}}'>{{item.goods_name}}</view>
+                <view class=" inline-block" wx:if='{{item.goods_num}}'>，{{item.goods_num}}件</view>
+                <view class=" inline-block" wx:if='{{item.goods_weight}}'>，{{item.goods_weight}}千克</view>
+                <view class=" inline-block" wx:if='{{item.goods_bulk}}'>，{{item.goods_bulk}}立方</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>运费：</text>
+                </view>
+                <view class=" inline-block" >{{item.pay_type?item.pay_type:''}}{{item.total_fee?item.total_fee:0}}元</view>
+              </view>
+              <view class="bd-body-ul-li J-Flex">
+                <view class="Explanatory inline-block">
+                  <text>线路：</text>
+                </view>
+                <view class=" inline-block J-Flex" wx:if='{{item.begin_site_name}}'> {{item.begin_site_name}}<image  src='{{ jiantouImage}}' class='jiantou'></image>{{item.end_site_name}}</view>
+              
+
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>发货人：</text>
+                  <view class=" inline-block" wx:if='{{item.consignor_name}}'> {{item.consignor_name}}</view>
+                </view>
+                <view class="Explanatory inline-block" style='margin-left:85rpx;'>
+                  <text>收货人：</text>
+                  <view class=" inline-block" wx:if='{{item.consignee_name}}'> {{item.consignee_name}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class=" page-cell-footer">
+          <image src='{{carImage}}'></image>
+          <view class=" inline-block" wx:if='{{item.bill_time}}'>
+            {{item.bill_time}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </block>  
+  <block wx:else>
+    <view class="weui-cell__bd">
+            <view class='weipipei'style='margin-left:15px'>未找到匹配的数据</view>
+          </view>
+  </block>
+</view>
+</scroll-view>

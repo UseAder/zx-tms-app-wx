@@ -1,0 +1,61 @@
+<view class="page__bd page__bd-quan return">
+  <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>进仓信息
+      </view>
+    </view>
+    <view class="page-cell-title">
+      进仓单单号：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.storeNo}}'>{{waybillWarehouseFun.store.storeNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      进仓时间：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.storeTime}}'>{{waybillWarehouseFun.store.storeTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      仓库名称：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.storeName}}'>{{waybillWarehouseFun.store.storeName}}</view>
+    </view>
+    <view class="page-cell-title">
+      进仓司机：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.driverName}}'>{{waybillWarehouseFun.store.driverName}}</view>
+    </view>
+    <view class="page-cell-title">
+      司机电话：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.driverMobile}}'>{{waybillWarehouseFun.store.driverMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      进仓费：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.storeFee}}'>{{waybillWarehouseFun.store.storeFee}}</view>
+    </view>
+    <view class="page-cell-title">
+      备注：
+      <view class=" inline-block" wx:if='{{waybillWarehouseFun.store.memo}}'>{{waybillWarehouseFun.store.memo}}</view>
+    </view>
+  </view>
+
+  <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>进仓票据图片
+      </view>
+      <view class="page-images">
+       <view class="weui-uploader__bd ">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{waybillWarehouseFun.photoList}}" wx:key="item">
+            <view class="weui-uploader__file" bindtap="instorePicPreviewImage" id="{{item.url}}">
+                <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+              </view>
+            </block>
+
+          </view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+
+
+</view>

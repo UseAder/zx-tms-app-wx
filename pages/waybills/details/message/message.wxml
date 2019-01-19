@@ -1,0 +1,48 @@
+<view class="page__bd message">
+<block wx:if='{{waybillSmsFun!=""}}'>
+  <view class="page__cell " wx:for="{{waybillSmsFun}}" wx:key="item">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>发送短信
+        <view class="weui-cell__ft inline-block">
+          <block wx:if="{{item.status==2}}">
+            <text class='J-Green'>已发送</text>
+          </block>
+          <block wx:else>
+            <text class='J-red'>未发送</text>
+          </block>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-cell-title">
+      发送时间：
+      <view class="inline-block" wx:if='{{item.sendTime}}'>{{item.sendTime}}</view>
+      
+    </view>
+    <view class="page-cell-title">
+      短信号码：
+      <view class="inline-block" wx:if='{{item.mobile}}'>{{item.mobile}}</view>
+      
+    </view>
+    <view class="page-cell-title">
+      接收方：
+      <view class="inline-block" wx:if='{{item.receiver}}'>{{item.receiver}}</view>
+      
+    </view>
+    <view class="page-cell-title" style="height: auto;">
+      短信内容：
+      <view class='messageContent' wx:if='{{item.content}}'>
+        {{item.content}}
+      </view>
+    </view>
+  </view>
+  </block>
+<block wx:else>
+
+<view class='noInformationForTheTimeBeing'>
+
+
+</view>
+</block>
+</view>

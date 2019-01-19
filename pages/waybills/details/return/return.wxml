@@ -1,0 +1,52 @@
+<view class="page__bd page__bd-quan return">
+  <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>回单信息
+        <view class="weui-cell__ft inline-block">
+<view class=" inline-block" wx:if='{{waybillDetailsFun.receiptNum}} '>需 {{waybillDetailsFun.receiptNum}} 份</view>
+        </view>
+      </view>
+    </view>
+    <view class='return-list'style='height:{{waybillReceiptFun.receiptList!=""?(retutnBlickN?waybillReceiptFun.receiptList.length*166:166):0}}rpx;transition:height 0.3s;'>
+      <view class='track-list' wx:for="{{waybillReceiptFun.receiptList}}" wx:key="item" style="display:{{index==0|retutnBlickN?'flex':'none'}};">
+        <view class='track-left' style="color:{{index==0?'#003573':'#c1c1c1'}}"  wx:if="{{item.createTime}}">
+          {{item.createTime}}
+        </view>
+        <view class='track-center' style="background:{{index==0?'#f5a623':'#ffffff'}};border:4rpx solid {{index==0?'#003573':'#c1c1c1'}};">
+        </view>
+        <view class='track-right' style="color:{{index==0?'#003573':'#c1c1c1'}}"  wx:if="{{item.memo}}">
+          {{item.memo}}
+        </view>
+        <view class='trackXian'></view>
+      </view>
+      <view class='return-footer' catchtap='retutnBlickNone'>
+        点击查看更多物流详情
+        <image src='{{receipPhotoListabImage}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title ">
+        <view class='inline-block xian'></view>回单图片
+      </view>
+      <view class="page-images">
+        <view class="weui-uploader__bd ">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{waybillReceiptFun.photoList}}" wx:key="item">
+            <view class="weui-uploader__file" bindtap="returnPicViewImage" id="{{item.url}}">
+                <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+              </view>
+            </block>
+
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

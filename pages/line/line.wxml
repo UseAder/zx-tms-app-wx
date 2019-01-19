@@ -1,0 +1,52 @@
+<view class="page__bd Statistics">
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>利润概况
+    </view>
+    <view class="page-cell-bd ">
+      <view class="page-cell-bd-left ">
+        <view>今日
+        </view>
+        <view class='J-Golden'>
+          <text>{{roadProfitFun.dayTj?roadProfitFun.dayTj:0}}元</text>
+        </view>
+        <!-- <view>
+          相比昨日：
+          <text class='J-Green'>-20.2%</text>
+        </view> -->
+      </view>
+      <view class="page-cell-bd-center ">
+        <view>本周
+        </view>
+        <view  class='J-Golden'>
+          <text >{{roadProfitFun.weekTj?roadProfitFun.weekTj:0}}元</text> 
+        </view>
+        <!-- <view>
+          相比上周：
+          <text class='J-red'>-20.2%</text>
+        </view> -->
+      </view>
+      <view class="page-cell-bd-right ">
+        <view>本月
+        </view>
+        <view class='J-Golden' >
+         <text>{{roadProfitFun.monthTj?roadProfitFun.monthTj:0}}元</text>
+        </view>
+        <!-- <view>
+          相比上月：
+          <text class='J-red'>-20.2%</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="page__cell " wx:for="{{roadProfitFun.allPhProfits}}" wx:key="item">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>
+       <view class=" inline-block" wx:if='{{index==0}}'>最近一月线路利润走势图-总</view>
+        <view class=" inline-block" wx:else>最近一月利润走势图-本网点—{{item[0].endNetworkName}}</view>
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+      <canvas canvas-id="{{'columnCanvas'+index}}"  class="canvas" data-canvasName="{{'columnCanvas'+index}}"></canvas>
+    </view>
+  </view>
+</view>

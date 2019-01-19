@@ -1,0 +1,123 @@
+.page__hd {
+  width: 100%;
+  height: 320rpx;
+  position: relative;background:#4a90e2;display: flex
+}
+
+.page__hd .slide-image{
+width: 306rpx;height: 306rpx
+}
+.page__hd-bd{
+  position: absolute;display: flex;justify-content: space-between;text-align: center;width: 100%;line-height:68rpx;
+bottom: 56rpx;color: #fff;font-size:24rpx;
+
+}
+
+.page__hd-bd-left{
+position: relative;right:-47rpx;
+
+}
+.page__hd-bd-right{
+position:relative;
+left:-46rpx;
+}
+
+.page__hd-bd-right .page__hd-bd-frist{
+right:-7px;
+
+}
+.page__hd-bdCenter{
+  position: absolute;text-align: center;top:46rpx;width:226rpx;
+
+
+}
+
+
+.page__hd-bdCenter-dao{
+  display: flex;align-items: center;padding:5rpx 0;
+
+}
+.page__hd-bdCenter .page__hd-bdCenter-daoXain{
+background:#ffffff;
+width:248rpx;height:5rpx;
+}
+
+.page__hd-bdCenter .page__hd-bdCenter-daoSan{
+      width:0;
+    height:0;
+    border-width:10rpx 0 10rpx 10rpx;
+    border-style:solid;
+    border-color:transparent transparent transparent #fff;/*透明 透明 透明 灰*/
+    position:relative;
+}
+.page__hd-bd-frist{
+  font-size:36rpx;position: relative;min-height: 68rpx
+
+}
+.page__hd-bd-left .page__hd-bd-frist{
+text-align:right;
+margin-right:71rpx;
+
+}
+.page__hd-bd-right .page__hd-bd-frist{
+  text-align: left;
+}
+.page__hd-bd-frist image{
+position:relative;
+
+top:6rpx;
+width:57rpx;
+height:43rpx;
+
+}
+image {
+  width: 100%;
+  height: 100%;
+}
+.page__nav{display: flex;background: #f8f8f8;justify-content:space-between;
+margin:15rpx 10rpx;overflow: hidden
+}
+.page__nav-list{
+  background:#ffffff;
+border-radius:12rpx;
+width:360rpx;
+height:372rpx;position: relative;padding-bottom: 10rpx
+
+}
+
+.page__nav-list-title{
+line-height: 53rpx;padding-left:20rpx
+}
+.page__nav-list-title:first-child{
+border-bottom:1px solid #eaeaea;margin-top: 10rpx;font-weight: 700;padding-left: 40rpx
+
+}
+.xian {
+  left:10rpx;
+top:18rpx;
+
+}
+.page__bd {
+margin:0 10rpx;
+
+
+}
+
+
+.page__bd .page__cell{
+  width: 100%;margin: 0;padding-left:60rpx;box-shadow:0;border-bottom:1px solid #eaeaea;
+
+}
+.page__bd .page__cell.page__cell-nav{
+  padding: 0;
+}
+
+.page__bd .page__cell.page__cell-nav .page-cell-title{
+margin: 0;padding-left: 38rpx;height:67rpx;
+line-height:67rpx;
+
+}
+
+.page__cell-title{
+  position: relative;line-height:70rpx;padding-left: 30rpx;
+}

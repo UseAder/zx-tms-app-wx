@@ -1,0 +1,57 @@
+<view class="page">
+<view class="page__hd">
+    <view class="weui-tab">
+      <view class="weui-navbar weui-navbar-J">
+        <block wx:for="{{tabs}}" wx:key="this">
+          <view class="weui-navbar__item {{activeIndex == item.current ? 'weui-bar__item_on' : 0}}" bindtap="handleChange" data-current="{{item.current}}">
+            <view class="weui-navbar__title">{{item.name}}</view>
+          </view>
+        </block>
+      </view>
+   </view>   </view>
+<view class="page__bd">
+  <view class="page__date">
+    <view class="page__datei-title">
+    日期：
+    </view>
+    <view class="page__datei-bd">
+      <picker mode="date" value="{{dateStart}}" start="2017-09-01" end="2019-09-02" bindchange="bindDateChangeStart">
+        <view class="input">{{dateStart}}</view><view class="page__datei-images" ></view>
+      </picker>
+      <view class='page__datei-bd-zhi'>至</view>
+       <picker mode="date" value="{{dateEnd}}" start="{{dateStart}}" end="2019-09-02" bindchange="bindDateChangeEnd">
+        <view class="input">{{dateEnd}}</view><view class="page__datei-images" > <image src='{{rli}}'></image> </view>
+      </picker>
+    </view>
+  </view>
+  <view class="page__cell ThreePoints" wx:for="{{customerPhFun}}" wx:key="item">
+      <view class='waybillListXuHao'>
+         {{index+1}}
+          </view>
+    <view class="page-cell-title ">
+      {{item.consignorName?item.consignorName:''}} {{item.consignorMobile?item.consignorMobile:''}}
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>运费：
+        <text class='J-Golden'>{{item.totalFee?item.totalFee:0}}元</text>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>票数：
+        <text class='J-Golden'>{{item.pickNum?item.pickNum:0}}票</text>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>重量：
+        <text class='J-Golden' wx:if="{{item.goodsWeight}}">{{item.goodsWeight}}千克</text>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>体积：
+        <text class='J-Golden' wx:if="{{item.goodsBulk}}">{{item.goodsBulk}}立方</text>
+      </view>
+    </view>
+  </view>
+</view></view>

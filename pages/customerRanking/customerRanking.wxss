@@ -1,0 +1,72 @@
+
+.weui-navbar-J {
+  position: fixed;
+  width: 100%;
+  top: 0;left:0;
+}
+
+.page__bd {
+margin-top: 108rpx;
+background:#f8f8f8;
+
+}
+.page__date{
+  display: flex;align-items: center;background:#ffffff;
+width:375px;
+height:46px;padding: 0 50rpx;margin-bottom:20rpx;
+
+}
+picker{
+  display: flex;align-items: center;
+}
+.page__datei-images{
+  float:left; position: relative;
+}
+.page__datei-images image{
+  margin-left:31rpx;position: absolute;top: 5rpx;
+
+width:25px;
+height:24px;
+}
+.input{
+  border:1px solid #003573;float:left;
+
+border-radius:12rpx;
+width:234px;
+height:28px;line-height: 28px;text-align: center
+}
+.page__cell{
+  overflow: hidden;margin-top: 20rpx;background:#fff;
+}
+
+.page-cell-title{
+ max-width: 550rpx;width:auto;margin: 0 auto!important;margin-left:108rpx!important;
+
+}
+
+.page-cell-title:first-child,.page-cell-title:last-child{
+  border: 0!important;
+}
+.page-cell-title:first-child{
+ font-weight: 700
+}
+.page-cell-titleRight {
+margin-left:15rpx!important;
+box-sizing: border-box
+}
+.page-cell-titleLeft,.page-cell-titleRight {min-width: 300rpx;width: auto
+}
+.page__datei-bd{
+  display: flex;border:1px solid #003573;border-radius:12rpx;align-items: center;
+}
+
+.page__datei-bd .input {
+width:242rpx;
+border:none;border-radius:none;
+/* float:left;
+
+height:28px;
+line-height:28px;
+text-align:center; */
+
+}

@@ -1,0 +1,304 @@
+/**app.wxss**/
+@import "weui.wxss";
+
+page {
+  background: #f8f8f8;
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.J-Golden {
+  color: #f5a623;
+}
+
+.J-red {
+  color: #d0021b;
+}
+
+.J-Green {
+  color: #7ed321;
+}
+
+.J-completed {
+  color: #b8b8b8;
+}
+
+.J-fff {
+  color: #fff;
+}
+
+.Explanatory {
+  color: #757575;
+}
+
+.canvas {
+  width: 100%;
+  height: 200px;
+  z-index: 100;
+  position: absolute;
+}
+
+.page__hd {
+  display: flex;
+  justify-content: space-around;
+}
+
+.page__hd-left, .page__hd-right {
+  background: #fff;
+  box-shadow: 0 2px 8px 0 rgba(208, 208, 208, 0.50);
+  border-radius: 6px;
+  width: 180px;
+  height: 125px;
+}
+
+.page__hd-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.page__hd-list-text {
+  width: 50%;
+  line-height: 63rpx;
+  text-align: center;
+}
+
+.page__hd-title {
+  background: #003573;
+  width: 100px;
+  height: 21px;
+  margin: 36rpx 0;
+  text-align: center;
+  color: #fff;
+}
+
+.page__bd-title {
+  display: flex;
+}
+
+.page__bd-title-left {
+  background: #003573;
+  width: 187px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+}
+
+.page__bd-title-right {
+  color: #003573;
+  width: 187px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.page-cell-titleLeft, .page-cell-titleRight {
+  width: 50%;
+}
+
+.page__bd .page__cell.ThreePoints .page-cell-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 0rpx 38rpx;
+  position: relative;
+}
+
+.page__bd .page__cell.ThreePoints .page-cell-title:first-child {
+  display: inline-flex;
+}
+
+.page__bd .page__cell.ThreePoints .page-cell-title:first-child .Total {
+  padding-left: 55rpx;
+}
+
+.page__bd .page__cell .page-cell-title {
+  height: 88rpx;
+  line-height: 88rpx;
+  border-bottom: 0;
+  margin: 0rpx 0 0rpx 38rpx;
+}
+
+.SegmentingLine {
+  position: absolute;
+  background: #fff;
+  left: 289rpx;
+  top: 2px;
+  text-align: center;
+  /* position: absolute;
+  width: 20rpx;
+  background: #fff;
+  left: 50%;
+  top: 2px;
+  text-align: center;
+  padding-left:7px;
+
+  margin-left: -10px;
+  padding-right: 10px; */
+}
+
+.SegmentingLine text {
+  border-left: 1px solid #e2e2e2;
+  width: 0px;
+  height: 23px;
+}
+
+.xian {
+  background: #003573;
+  position: absolute;
+  top: 28rpx;
+  left: -28rpx;
+  width: 8rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+  line-height: 88rpx;
+}
+
+.scrollViewNav {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  box-shadow: 0 0 16rpx 0 rgba(0, 0, 0, 0.1);
+}
+
+.J-Flex {
+  display: flex;
+  align-items: center;
+}
+
+.page__bd {
+  margin-top: 20rpx;
+  background: #fff;
+}
+
+.page__bd.Statistics {
+  background: #f8f8f8;
+}
+
+.page__bd .page__cell {
+  position: relative;
+  background: #fff;
+  margin: 0 20rpx 20rpx 20rpx;
+  box-shadow: 0 0 16rpx 0 rgba(0, 0, 0, 0.06);
+  border-radius: 12rpx;
+  z-index: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.page__bd.Statistics .page__cell {
+  margin: 0;
+  margin-bottom: 20rpx;
+}
+
+.page__bd .page__cell .weui-cell {
+  border: none;
+  margin: 0;
+  padding: 0 30rpx 0 28rpx;
+}
+
+.page-cell-title {
+  height: 88rpx;
+  line-height: 88rpx;
+  border: none;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.weui-cell__ft image {
+  width: 22rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+}
+
+.page__bd .page__cell .page-cell-body .bd-body-ul-body .bd-body-ul-li {
+  color: #757575;
+  line-height: 1;
+  margin-bottom: 27rpx;
+}
+
+.page__bd .page__cell .page-cell-title .weui-cell__bd {
+  position: relative;
+  font-weight: 700;
+}
+
+.page-cell-footer {
+  color: #003573;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-top: 1px solid #e5e5e5 !important;
+}
+
+.page-cell-footer image {
+  height: 24rpx;
+  width: 37rpx;
+  padding: 0 14rpx 0 28rpx;
+}
+
+.waybillListXuHao {
+  background: #4a90e2;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20rpx;
+  top: 20rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 100%;
+}
+
+.page__cell {
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.page-cell-title {
+  position: relative;
+  border: 0 !important;
+}
+
+.page-cell-bd {
+  font-size: 24rpx;
+  box-sizing: border-box;
+  display: flex;
+  text-align: center;
+  line-height: 64rpx;
+  padding-bottom: 30rpx;
+}
+
+.page-cell-bd-left, .page-cell-bd-center, .page-cell-bd-right {
+  width: 33.3333%;
+  border-right: 1px solid #ececec;
+}
+
+.page-cell-bdCanvas {
+  width: 100%;
+  height: 228px;
+}
+
+.page__hd {
+  display: block;
+  justify-content: space-around;
+}
+
+.noInformationForTheTimeBeing {
+  box-sizing: border-box;
+  padding: 20rpx;
+  background: #fff;
+  height: 100vh;
+}
+.jiantou{
+ height:28rpx;
+width: 70rpx;
+padding:0 5rpx;
+
+}

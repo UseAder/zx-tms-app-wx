@@ -1,0 +1,134 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="page__hd-left">
+      <view class="page__hd-title">
+        发货
+      </view>
+      <view class="page__hd-list">
+        <view class="page__hd-list-text">
+          票数:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeSend.ticketNum}}'>{{carSummaryFun.storeSend.ticketNum}}</view>
+        </view>
+        <view class="page__hd-list-text">
+          件数:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeSend.pieceNum}}'>{{carSummaryFun.storeSend.pieceNum}}</view>
+        </view>
+        <view class="page__hd-list-text"> 重量:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeSend.goodsWeight}}'>{{carSummaryFun.storeSend.goodsWeight}}</view>
+        </view>
+        <view class="page__hd-list-text">
+          体积:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeSend.goodsBulk}}'>{{carSummaryFun.storeSend.goodsBulk}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__hd-right">
+      <view class="page__hd-title">
+        到货
+      </view>
+      <view class="page__hd-list">
+        <view class="page__hd-list-text">
+          票数:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeReceive.ticketNum}}'>{{carSummaryFun.storeReceive.ticketNum}}</view>
+        </view>
+        <view class="page__hd-list-text">
+          件数:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeReceive.pieceNum}}'>{{carSummaryFun.storeReceive.pieceNum}}</view>
+        </view>
+        <view class="page__hd-list-text"> 重量:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeReceive.goodsWeight}}'>{{carSummaryFun.storeReceive.goodsWeight}}</view>
+        </view>
+        <view class="page__hd-list-text">
+          体积:
+          <view class=" inline-block" wx:if='{{carSummaryFun.storeReceive.goodsBulk}}'>{{carSummaryFun.storeReceive.goodsBulk}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="page__bd-title">
+      <block wx:for="{{tabs}}" wx:key="this">
+        <view class="{{activeIndex == item.status ? 'page__bd-title-left ' : 'page__bd-title-right '}}" bindtap="handleChange" data-status="{{item.status}}">
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+    <block wx:for="{{vehicleList}}" wx:key='this'>
+      <view class="page__cell" data-id="{{item.id}}" catchtap='vehicleDetailsWxml'>
+        <block wx:if="{{item.status==1}}">
+          <view class="vehicleListStatus" catchtap="carDepart" data-id='{{item.id}}'>
+            发车
+          </view>
+        </block>
+        <block wx:if="{{item.status==5}}">
+          <view class="vehicleListStatus" catchtap="carArrive" data-id='{{item.id}}'>
+            到站
+          </view>
+        </block>
+        <view class="weui-cell page-cell-title">
+          <view class="weui-cell__bd">
+            <view class='inline-block xian'></view>配载单号：
+            <view class=" inline-block" wx:if=''></view>{{item.stowageNo}}
+          </view>
+          <view class="weui-cell__ft">
+            <block wx:if="{{item.status==1}}">
+              <text class='J-Golden'>等待发车</text>
+              <image src='../../images/back.png'></image>
+            </block>
+            <block wx:elif="{{item.status==5}}">
+              <text class='J-Golden'>运输中</text>
+              <image src='../../images/back.png'></image>
+            </block>
+            <block wx:elif="{{item.status==10}}">
+              <text class='J-completed'>已到站 </text>
+              <image src='../../images/back1.png'></image>
+            </block>
+          </view>
+        </view>
+        <view class="weui-cell page-cell-body">
+          <view class="bd-body-ul">
+            <view class="bd-body-ul-body">
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>车牌号：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.plateNumber}}'>{{item.plateNumber}}</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>司机姓名：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.driverName}}'>{{item.driverName}}</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>司机手机：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.driverMobile}}'> {{item.driverMobile}}</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>线路：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.beginNetworkName}}'> {{item.beginNetworkName}}--</view>
+                <view class=" inline-block" wx:if='{{item.endNetworkName}}'> {{item.endNetworkName}}</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>配载票数：</text>
+                  <view class=" inline-block" wx:if='{{item.waybillNum}}'> {{item.waybillNum}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class=" page-cell-footer">
+          <image src='../../images/car.png'></image>
+          <view class=" inline-block" wx:if='{{item.leaveTime}}'>
+            {{item.leaveTime}} 发车
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

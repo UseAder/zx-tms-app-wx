@@ -1,0 +1,12 @@
+.page__bd__imation{padding:10px 30px;}
+.page__bd{
+ background: #fff;
+}
+.page__bd .weui-cell__bd{
+  height:56rpx;line-height: 50rpx;display: flex;justify-content: space-between;
+height:80rpx;
+line-height:52rpx;
+}
+page{
+  background: #fff
+}

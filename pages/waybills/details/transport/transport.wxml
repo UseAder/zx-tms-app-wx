@@ -1,0 +1,162 @@
+<view class="page__bd ">
+<block wx:if='{{waybillTransportFun.deliver||waybillTransportFun.pick||waybillTransportFun.sign||waybillTransportFun.stowage}}'>
+  <view class="page__cell " wx:if='{{waybillTransportFun.pick}}'>
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>提货信息
+      <view class="weui-cell__ft inline-block">
+        <block wx:if="{{waybillDetailsFun.status==1}}">
+          <text class='J-Golden'>未装车</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==5}}">
+          <text class='J-Golden'>等待发车</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==10}}">
+          <text class='J-Golden'>运输中</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==15}}">
+          <text class='J-Golden'>已到达</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==-1}}">
+          <text class='J-Golden'>作废</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==25}}">
+          <text class='J-completed'>已签收</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==100}}">
+          <text class='J-completed'>到站运单</text>
+        </block>
+      </view>
+    </view>
+    <view class="page-cell-title">
+      提货单号：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.pickNo}}'>{{waybillTransportFun.pick.pickNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      提货车辆：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.plateNumber}}'>{{waybillTransportFun.pick.plateNumber}}</view>
+    </view>
+    <view class="page-cell-title">
+      提货司机：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.driverName}}'>{{waybillTransportFun.pick.driverName}}</view>
+    </view>
+    <view class="page-cell-title">
+      司机手机：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.driverMobile}}'>{{waybillTransportFun.pick.driverMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      提货时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.pickTime}}'>{{waybillTransportFun.pick.pickTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      完成时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.pickDoneTime}}'>{{waybillTransportFun.pick.pickDoneTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      备注：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.pick.memo}}'>{{waybillTransportFun.pick.memo}}</view>
+    </view>
+  </view>
+
+
+  <view class="page__cell " wx:if='{{waybillTransportFun.stowage}}'>
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>配载信息
+    </view>
+    <view class="page-cell-title">
+      配载单号：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.stowageNo}}'>{{waybillTransportFun.stowage.stowageNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      始发-到站网点：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.beginNetworkName}}'>{{waybillTransportFun.stowage.beginNetworkName}}--</view>
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.endNetworkName}}'>{{waybillTransportFun.stowage.endNetworkName}}</view> 
+    </view>
+    <view class="page-cell-title">
+      车辆：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.plateNumber}}'>{{waybillTransportFun.stowage.plateNumber}}</view>
+    </view>
+    <view class="page-cell-title">
+      发车时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.leaveTime}}'>{{waybillTransportFun.stowage.leaveTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      到站时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.arriveTime}}'>{{waybillTransportFun.stowage.arriveTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      备注：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.stowage.memo}}'>{{waybillTransportFun.stowage.memo}}</view>
+    </view>
+  </view>
+
+  <view class="page__cell " wx:if='{{waybillTransportFun.deliver}}'>
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>送货信息
+    </view>
+    <view class="page-cell-title">
+      送货单号：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.deliverNo}}'>{{waybillTransportFun.deliver.deliverNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      送货车辆：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.plateNumber}}'>{{waybillTransportFun.deliver.plateNumber}}</view>
+    </view>
+    <view class="page-cell-title">
+      送货司机：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.driverName}}'>{{waybillTransportFun.deliver.driverName}}</view>
+    </view>
+    <view class="page-cell-title">
+      司机手机：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.driverMobile}}'>{{waybillTransportFun.deliver.driverMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      送货时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.deliverTime}}'>{{waybillTransportFun.deliver.deliverTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      完成时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.deliverDoneTime}}'>{{waybillTransportFun.deliver.deliverDoneTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      备注：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.deliver.memo}}'>{{waybillTransportFun.deliver.memo}}</view>
+    </view>
+  </view>
+
+  <view class="page__cell " wx:if='{{waybillTransportFun.sign}}'>
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>签收信息
+    </view>
+
+    <view class="page-cell-title">
+      签收人：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.sign.signName}}'>{{waybillTransportFun.sign.signName}}</view>
+    </view>
+    <view class="page-cell-title">
+      电话：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.sign.signMobile}}'>{{waybillTransportFun.sign.signMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      身份证：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.sign.signCard}}'>{{waybillTransportFun.sign.signCard}}</view>
+    </view>
+    <view class="page-cell-title">
+      签收时间：
+      <view class=" inline-block" wx:if='{{waybillTransportFun.sign.signTime}}'>{{waybillTransportFun.sign.signTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      备注：
+      <view class=" inline-block" wx:if=''>{{waybillTransportFun.sign.memo}}</view>
+    </view>
+  </view>
+
+  
+</block>
+<block wx:else>
+
+<view class='noInformationForTheTimeBeing'>
+
+
+</view>
+</block>
+</view>

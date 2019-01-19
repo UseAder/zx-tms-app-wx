@@ -1,0 +1,40 @@
+<view class="page__bd Statistics">
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>单量概况
+    </view>
+    <view class="page-cell-bd ">
+      <view class="page-cell-bd-left ">
+        <view>今日
+        </view>
+        <view class='J-Golden' >
+          <text>{{networkArriveGoodsFun.dayTj?networkArriveGoodsFun.dayTj:0}}</text>
+        </view>
+      </view>
+      <view class="page-cell-bd-center ">
+        <view>本周
+        </view>
+        <view  class='J-Golden'>
+          <text >{{networkArriveGoodsFun.weekTj?networkArriveGoodsFun.weekTj:0}}</text>
+        </view>
+      </view>
+      <view class="page-cell-bd-right ">
+        <view>本月
+        </view>
+        <view class='J-Golden'>
+          <text>{{networkArriveGoodsFun.monthTj?networkArriveGoodsFun.monthTj:0}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell " wx:for="{{networkArriveGoodsFun.allPhProfits}}" wx:key="item">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>
+       <view class=" inline-block" wx:if='{{index==0}}'>最近一月到货单量走势-总</view>
+        <view class=" inline-block" wx:else>最近一月到货单量走势-本网点—{{item[0].endNetworkName}}</view>
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+      <canvas canvas-id="{{'columnCanvas'+index}}"  class="canvas" data-canvasName="{{'columnCanvas'+index}}"></canvas>
+    </view>
+  </view>
+</view>

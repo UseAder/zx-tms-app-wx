@@ -1,0 +1,47 @@
+<scroll-view scroll-x style="height:70rpx;width:750rpx;overflow:scroll;" scroll-left="{{scroll_left}}" class='scrollViewNav'>
+  <view style="width:{{tab_tite_data.length*t_width}}rpx;">
+    <view wx:for="{{tab_tite_data}}" wx:key="index" style="width:{{t_width}}rpx;display:inline-block;">
+      <view bindtap='changeview' style="color:{{c_index==index?'#003573;':'000'}};font-weight:{{c_index==index?'700;':'100'}};width:100%;height:64rpx;text-align:center;font-size:30rpx;line-height:64rpx;display:inline-block;" data-current="{{index}}" data-status="{{item.status}}">{{item.title}}</view>
+      <view style="display:{{c_index==index?'block':'none'}}; width:{{t_width-30}}rpx;text-align:center;background:#003573;height:6rpx;margin-left:15rpx;"></view>
+    </view>
+  </view>
+</scroll-view>
+  <swiper bindchange='get_index' current="{{c_index}}" style="height: {{clientHeight?clientHeight+'rpx':'auto'}}">
+    <swiper-item wx:for="{{tab_tite_data}}" wx:key="index">
+    <scroll-view scroll-y="{{true}}" style="height: {{clientHeight?clientHeight+'rpx':'auto'}}">
+      <block wx:if='{{c_index==0}}'>
+        <include src="waybill/waybill.wxml" />
+      </block>
+      <block wx:if='{{c_index==1}}'>
+        <include src="cost/cost.wxml" />
+      </block>
+      <block wx:if='{{c_index==2}}'>
+        <include src="transport/transport.wxml" />
+      </block>
+      <block wx:if='{{c_index==3}}'>
+        <include src="track/track.wxml" />
+      </block>
+      <block wx:if='{{c_index==4}}'>
+        <include src="return/return.wxml" />
+      </block>
+      <block wx:if='{{c_index==5}}'>
+        <include src="abnormal/abnormal.wxml" />
+      </block>
+      <block wx:if='{{c_index==6}}'>
+        <include src="changelist/changelist.wxml" />
+      </block>
+      <block wx:if='{{c_index==7}}'>
+        <include src="warehouse/warehouse.wxml" />
+      </block>
+      <block wx:if='{{c_index==8}}'>
+        <include src="payment/payment.wxml" />
+      </block>
+      <block wx:if='{{c_index==9}}'>
+        <include src="settlement/settlement.wxml" />
+      </block>
+      <block wx:if='{{c_index==10}}'>
+        <include src="message/message.wxml" />
+      </block>
+   </scroll-view>
+    </swiper-item>
+  </swiper>

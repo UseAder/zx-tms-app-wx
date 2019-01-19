@@ -1,0 +1,28 @@
+<view class="page">
+  <view class="page__hd">
+    <image class="hdImage" src="{{logoUrl}}" style='height:100px;width:100px;'></image>
+    <view class="page__title">{{title}}</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <image class="nameImage" src="{{companyImg}}"></image>
+      <input class="weui-input" placeholder-style="color:#acacac;" placeholder="公司名称" value='{{company}}' bindinput='getCompanyValue' />
+    </view>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <image class="Image" src="{{zhanghaoImg}}"></image>
+      <input class="weui-input" placeholder-style="color:#acacac;" placeholder="登录账号" value='{{zhanghao}}' bindinput='getZhanghaoValue' />
+    </view>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+      <image class="keyImage" src="{{mimaImg}}"></image>
+      <input class="weui-input  weui-input-te" placeholder-style="color:#acacac;" type="password"  placeholder="登录密码" bindinput='getMimaValue' value='{{mima}}'  />
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn " bindtap="save">登录</button>
+   
+    </view>
+  </view>
+  <view class="weui-footer">
+    <view class="weui-footer__text">{{technicalSupport}}</view>
+
+  </view>
+</view>

@@ -1,0 +1,31 @@
+## hz-app-wx
+   
+
+   "pages/waybills/waybills", //运单管理
+    "pages/dot/dot", //网点库存
+    "pages/vehicle/vehicle", //车辆配载
+    "pages/receivable/receivable", //应收应付
+    "pages/customerProfit/customerProfit", //客户利润
+    "pages/customerRanking/customerRanking", //客户排行
+    "pages/netProfit/netProfit", //网点利润
+    "pages/cart/cart", //大车利润
+    "pages/dotTurnover/dotTurnover", //网点营业额
+    "pages/deliverGoods/deliverGoods", //发货统计
+    "pages/Arrival/Arrival", //到货统计
+    "pages/line/line", //线路利润
+    "pages/home/home",
+    "pages/myinfor/myinfor",
+    "pages/logs/logs",
+    "pages/index/index"
+    "pages/home/weeklyStatistics/weeklyStatistics",//一周汇总
+    "pages/waybills/details/waybill/waybill",//运单
+    "pages/waybills/details/cost/cost",//成本
+    "pages/waybills/details/transport/transport",//运输
+    "pages/waybills/details/track/track",//跟踪
+    "pages/waybills/details/return/return",//回单
+    "pages/waybills/details/abnormal/abnormal",//异常
+    "pages/waybills/details/changelist/changelist",//改单
+    "pages/waybills/details/warehouse/warehouse",//进仓
+    "pages/waybills/details/payment/payment",//货款
+    "pages/waybills/details/settlement/settlement",//结算
+    "pages/waybills/details/message/message"//短信

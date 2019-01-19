@@ -1,0 +1,52 @@
+/**index.wxss**/
+.button-contact{overflow:hidden;poaition:relative;flex-wrap:wrap}
+.button-contact .button-image{ opacity: 0; filter:Alpha(opacity=0);}
+.button-contact .weui-cell__bd{position:absolute}
+.button-contact .weui-cell__ft{
+right:40rpx;
+position:absolute;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  overflow:hidden;
+  width: 150rpx;
+  height: 150rpx;
+  margin:  20rpx 20rpx 10rpx 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.container{padding-bottom:20rpx;border-bottom:20rpx solid #f8f8f8;
+ }
+
+.weui-cell{height:192px;margin:0 ;padding:0 40rpx;border:none;border-bottom:1px solid #f0eff4;}
+.page__bd{
+margin:16rpx 0;
+
+background: #fff;
+}
+
+.ccsImage {margin-right: 10rpx;vertical-align: middle;width:40rpx; height: 40rpx;}
+.page__nav{height: 108rpx;line-height: 98rpx;margin:16rpx 0;border-bottom:16rpx;display: flex;justify-content: space-around;background: #fff;}
+.page__bd .weui-cell{height: 112rpx} 
+.weui-footer{margin-top: 40rpx;
+position:fixed;
+bottom:60rpx;
+margin:0 auto;
+width:100%;
+}
+page{
+  background: #fff
+}
+.navigator-hover {
+	background-color: rgba(0, 0, 0, 0.1); opacity: 0.7;
+}

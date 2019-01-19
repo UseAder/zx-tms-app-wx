@@ -1,0 +1,13 @@
+<view class="page__bd track page__bd-quan">
+  <view class='track-list' wx:for="{{waybillTrackFun}}" wx:key="item">
+    <view class='track-left' style="color:{{index==0?'#003573':'#c1c1c1'}}" wx:if="{{item.trackTime}}}">
+      {{item.trackTime}}
+    </view>
+    <view class='track-center' style="background:{{index==0?'#f5a623':'#ffffff'}};border:4rpx solid {{index==0?'#003573':'#c1c1c1'}};">
+    </view>
+    <view class='track-right' style="color:{{index==0?'#003573':'#c1c1c1'}}" wx:if="{{item.content}}">
+       {{item.content}}
+    </view>
+  </view>
+  <view class='trackXian'></view>
+</view>

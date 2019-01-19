@@ -1,0 +1,51 @@
+
+<view class="page__bd">
+
+<view class="page__cell ThreePoints">
+  <view class="page-cell-title ">
+    <view class='inline-block xian'></view>发站成本
+  </view>
+  <view class="page-cell-title ">
+  <view class='page-cell-titleLeft'>提货费：<view class=" inline-block">{{waybillCostFun.fzPickFee?waybillCostFun.fzPickFee:0}}元</view></view>
+  <view class='SegmentingLine'>
+      <text></text>
+     </view>
+  <view class='page-cell-titleRight'>装卸费：<view class=" inline-block">{{waybillCostFun.fzLoadFee?waybillCostFun.fzLoadFee:0}}元</view></view>
+  </view>
+  
+  <view class="page-cell-title ">
+    <view class='page-cell-titleLeft'>其他费：<view class=" inline-block">{{waybillCostFun.fzOtherFee?waybillCostFun.fzOtherFee:0}}元</view></view>
+    <view class='SegmentingLine'>
+      <text></text>
+     </view>
+    
+  </view>
+</view>
+
+
+<view class="page__cell ThreePoints">
+  <view class="page-cell-title ">
+    <view class='inline-block xian'></view>到站成本
+  </view>
+  <view class="page-cell-title ">
+  <view class='page-cell-titleLeft'>送货费：<view class=" inline-block">{{waybillCostFun.dzDeliverFee?waybillCostFun.dzDeliverFee:0}}元</view></view>
+  <view class='SegmentingLine'>
+      <text></text>
+     </view>
+  <view class='page-cell-titleRight'>中转费：<view class=" inline-block">{{waybillCostFun.dzTransitFee?waybillCostFun.dzTransitFee:0}}元</view></view>
+  </view>
+  <view class="page-cell-title ">
+  <view class='page-cell-titleLeft' >装卸费：<view class=" inline-block">{{waybillCostFun.dzLoadFee?waybillCostFun.dzLoadFee:0}}元</view></view>
+   <view class='SegmentingLine'>
+      <text></text>
+     </view>
+  <view class='page-cell-titleRight'>上楼费：<view class=" inline-block">{{waybillCostFun.dzUpFee?waybillCostFun.dzUpFee:0}}元</view></view>
+  </view>
+  <view class="page-cell-title ">
+    <view class='page-cell-titleLeft'>其他费：<view class=" inline-block">{{waybillCostFun.dzOtherFee?waybillCostFun.dzOtherFee:0}}元</view></view>
+    <view class='SegmentingLine'>
+      <text></text>
+     </view>
+  </view>
+</view>
+</view>

@@ -1,0 +1,50 @@
+<view class="page__bd page__bd-quan return">
+
+  <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title J-Flex">
+        <image src="{{abnormalImage}}" class="abnormalImage"></image>
+        <view class='inline-block'>异常信息</view>
+      </view>
+    </view>
+    <view class="page-cell-title">
+      异常类型：
+      <view class=" inline-block" wx:if='{{waybillAbnormalFun.exception.typeName}}'>{{waybillAbnormalFun.exception.typeName}}</view>
+    </view>
+    <view class="page-cell-title">
+      异常件数：
+      <view class=" inline-block" wx:if='{{waybillAbnormalFun.exception.exceptionGoodsNum}}'>{{waybillAbnormalFun.exception.exceptionGoodsNum}}件</view>
+
+    </view>
+    <view class="page-cell-title">
+      赔偿金额：
+      <view class=" inline-block" wx:if='{{waybillAbnormalFun.exception.exceptionFee}}'>{{waybillAbnormalFun.exception.exceptionFee}}元</view>
+
+    </view>
+    <view class="page-cell-title" style="display: flex;">
+      <view class='abnormalTitle'>
+        异常描述：
+      </view>
+      <view class='abnormalContent' wx:if='{{waybillAbnormalFun.exception.content}}'>{{waybillAbnormalFun.exception.content}}</view>
+    </view>
+  </view>
+   <view class="page__cell message">
+    <view class='page-cell-title-frist'>
+      <view class="page-cell-title J-Flex">
+        <image src="{{abnormalImage}}" class="abnormalImage"></image>
+        <view class='inline-block'>异常图片</view>
+      </view>
+      <view class="page-images">
+        <view class="weui-uploader__bd ">
+          <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{waybillAbnormalFun.photoList}}" wx:key="item">
+              <view class="weui-uploader__file" bindtap="abnormalPicViewImage" id="{{item.url}}">
+                <image class="weui-uploader__img" src="{{item.url}}" mode="aspectFill" />
+              </view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

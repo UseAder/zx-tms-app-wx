@@ -1,0 +1,96 @@
+<scroll-view class='scrollViewNav' scroll-x style="height:70rpx;width:750rpx;overflow:scroll;" scroll-left="{{scroll_left}}">
+  <view style="width:{{tab_tite_data.length*t_width}}rpx;">
+    <view wx:for="{{tab_tite_data}}" wx:key="index" style="width:{{t_width}}rpx;display:inline-block;">
+      <view bindtap='changeview' style="color:{{c_index==index?'#003573;':'000'}};font-weight:{{c_index==index?'700;':'100'}};width:100%;height:64rpx;text-align:center;font-size:30rpx;line-height:64rpx;display:inline-block;" data-current="{{index}}" data-status="{{item.status}}">{{item.title}}</view>
+      <view style="display:{{c_index==index?'block':'none'}}; width:{{t_width-30}}rpx;text-align:center;background:#003573;height:6rpx;margin-left:15rpx;"></view>
+    </view>
+  </view>
+</scroll-view>
+<scroll-view scroll-y scroll-top='{{scrollTopNum}}' bindscrolltolower="scrollReachBottom" style="position:absolute; top:0; left:0; right:0; bottom:0;">
+  <view class="page__bd" style='padding-top:70rpx;'>
+    <block wx:for="{{records}}" wx:key='this'>
+      <view class="page__cell" data-id="{{item.id}}" catchtap="waybillsList">
+        <view class="weui-cell page-cell-title">
+          <view class="weui-cell__bd">
+            <view class='inline-block xian'></view>单号：{{item.waybill_no}}
+          </view>
+          <view class="weui-cell__ft">
+            <block wx:if="{{item.status==1}}">
+              <text class='J-Golden'>未装车</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==5}}">
+              <text class='J-Golden'>等待发车</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==10}}">
+              <text class='J-Golden'>运输中</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==15}}">
+              <text class='J-Golden'>已到达</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==-1}}">
+              <text class='J-Golden'>作废</text>
+              <image src='{{backImage}}'></image>
+            </block>
+            <block wx:elif="{{item.status==25}}">
+              <text class='J-completed'>已签收</text>
+              <image src='{{back1Image}}'></image>
+            </block>
+            <block wx:elif="{{item.status==100}}">
+              <text class='J-completed'>到站运单</text>
+              <image src='{{back1Image}}'></image>
+            </block>
+          </view>
+        </view>
+        <view class="weui-cell page-cell-body">
+          <view class="bd-body-ul">
+            <view class="bd-body-ul-body">
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>货物：</text>
+                </view>
+                <view class=" inline-block" wx:if='{{item.goods_name}}'>{{item.goods_name}}</view>
+                <view class=" inline-block" wx:if='{{item.goods_num}}'>，{{item.goods_num}}件</view>
+                <view class=" inline-block" wx:if='{{item.goods_weight}}'>，{{item.goods_weight}}千克</view>
+                <view class=" inline-block" wx:if='{{item.goods_bulk}}'>，{{item.goods_bulk}}立方</view>
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>运费：</text>
+                </view>
+                <view class=" inline-block" >{{item.pay_type?item.pay_type:''}}{{item.total_fee?item.total_fee:0}}元</view>
+              </view>
+              <view class="bd-body-ul-li J-Flex">
+                <view class="Explanatory inline-block">
+                  <text>线路：</text>
+                </view>
+                <view class=" inline-block J-Flex" wx:if='{{item.begin_site_name}}'> {{item.begin_site_name}}<image  src='{{jiantouImage}}' class='jiantou'></image>{{item.end_site_name}}</view>
+              
+
+              </view>
+              <view class="bd-body-ul-li">
+                <view class="Explanatory inline-block">
+                  <text>发货人：</text>
+                  <view class=" inline-block" wx:if='{{item.consignor_name}}'> {{item.consignor_name}}</view>
+                </view>
+                <view class="Explanatory inline-block" style='margin-left:85rpx;'>
+                  <text>收货人：</text>
+                  <view class=" inline-block" wx:if='{{item.consignee_name}}'> {{item.consignee_name}}</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class=" page-cell-footer">
+          <image src='{{carImage}}'></image>
+          <view class=" inline-block" wx:if='{{item.bill_time}}'>
+            {{item.bill_time}}
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

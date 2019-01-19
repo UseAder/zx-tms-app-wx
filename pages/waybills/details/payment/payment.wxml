@@ -1,0 +1,27 @@
+<view class="page__bd track page__bd-quan payment">
+  <view class='payment-header'>
+    <view class="page-cell-title ">
+      <view>
+        代收货款：
+        <view class="inline-block">{{waybillDetailsFun.goodsFee?waybillDetailsFun.goodsFee:0}}元</view>
+        
+      </view>
+      <view>
+        手续费：
+        <view class="inline-block">{{waybillDetailsFun.goodsServiceFee?waybillDetailsFun.goodsServiceFee:0}}元</view>
+      </view>
+    </view>
+    <image src='{{wenhaoImage}}' class='wenhaoImage' catchtap='wenhaoImageFun'></image>
+  </view>
+  <view class='track-list' wx:for="{{waybillTrackFun}}" wx:key="item">
+    <view class='track-left' style="color:{{index==0?'#003573':'#c1c1c1'}}" wx:if="{{item.trackTime}}}">
+      {{item.trackTime}}
+    </view>
+    <view class='track-center' style="background:{{index==0?'#f5a623':'#ffffff'}};border:4rpx solid {{index==0?'#003573':'#c1c1c1'}};">
+    </view>
+    <view class='track-right' style="color:{{index==0?'#003573':'#c1c1c1'}}" wx:if="{{item.content}}">
+       {{item.content}}
+    </view>
+  </view>
+  <view class='trackXian'></view>
+</view>

@@ -1,0 +1,78 @@
+<view class=" page__bd Statistics">
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>利润概况
+    </view>
+    <view class="page-cell-bd ">
+      <view class="page-cell-bd-left ">
+        <view>今日
+        </view>
+        <view class='J-Golden'>车次
+          <text>{{cartProfitFun.dayTj?cartProfitFun.dayTj[0]:0}}</text>
+        </view>
+        <view class='J-Golden'>利润
+          <text>{{cartProfitFun.dayTj?cartProfitFun.dayTj[1]:0}}元</text>
+        </view>
+      </view>
+      <view class="page-cell-bd-center ">
+        <view>本周
+        </view>
+          <view class='J-Golden'>车次
+          <text>{{cartProfitFun.weekTj?cartProfitFun.weekTj[0]:0}}</text>
+        </view>
+         <view class='J-Golden'>利润
+          <text>{{cartProfitFun.weekTj?cartProfitFun.weekTj[1]:0}}元</text>
+        </view>
+      </view>
+      <view class="page-cell-bd-right ">
+        <view>本月
+        </view>
+        <view  class='J-Golden'>车次
+          <text >{{cartProfitFun.monthTj?cartProfitFun.monthTj[0]:0}}</text>
+        </view>
+        <view  class='J-Golden'>利润
+          <text >{{cartProfitFun.monthTj?cartProfitFun.monthTj[1]:0}}元</text>
+        </view>
+      
+      </view>
+    </view>
+
+  </view>
+<view class="page__cell " wx:for="{{cartProfitFun.cartTotalProfit}}" wx:key="item" >
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>
+       <view class=" inline-block" wx:if='{{index==0}}'>最近10车的毛利走势</view>
+        <view class=" inline-block" wx:else>到{{item[0].endNetworkName}}--车辆毛利</view>
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+      <canvas canvas-id="{{'columnCanvas'+index}}"  class="canvas" data-canvasName="{{'columnCanvas'+index}}"></canvas>
+    </view>
+  </view>
+  <!-- <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>最近一月日利润走势图-总
+    </view>
+    <view class="page-cell-bd ">
+
+      <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>最近一月日利润走势图-本网点—网点A
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+
+      <canvas canvas-id="columnCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>最近一月日利润走势图-本网点—网点B
+    </view>
+    <view class="page-cell-bd ">
+
+      <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view> -->
+</view>

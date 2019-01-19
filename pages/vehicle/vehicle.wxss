@@ -1,0 +1,22 @@
+.page__hd{
+  display: flex;justify-content: space-around;margin-top: 20rpx
+
+}
+.page__bd-title{
+margin-bottom: 30rpx;
+}
+.page__bd .page__cell {
+box-shadow:0 0 16rpx 0 rgba(0, 0, 0, 0.2);
+}
+.vehicleListStatus{
+  position:absolute;bottom:116rpx;
+right:20px ;width:80px;
+line-height:28px;
+height:28px;
+text-align:center;
+color:#fff;
+border-radius:2px;
+background:#f5a623;
+z-index:1
+}
+

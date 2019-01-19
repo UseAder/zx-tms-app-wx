@@ -1,0 +1,9 @@
+  {
+    "onReachBottomDistance": 20,
+    "component": true,
+    "enablePullDownRefresh": false,
+    "disableScroll": false,
+
+      "navigationBarTitleText": "车辆配载"
+    
+  }

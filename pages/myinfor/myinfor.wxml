@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="page__hd">
+    <view class="container">
+      <view class="userinfo">
+        <view class="userinfo-avatar"><open-data type="userAvatarUrl"></open-data></view>
+          <view class="userinfo-nickname"><open-data type="userNickName"></open-data></view>
+          
+      </view>
+    </view>
+
+    <view class="page__bd">
+      <navigator url="imation/imation" class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">
+          <image class="ccsImage" src="../../images/qyxx.png"></image>
+          <text>企业信息</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      
+
+      <view class="weui-cell weui-cell_access button-contact"  hover-class="navigator-hover">
+      
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <contact-button class="button-image" size='22' />
+        <view class="weui-cell__bd">
+          <image class="ccsImage" src="../../images/ccs.png"></image>
+          <text>联系客服</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </view>
+      <navigator url="../logs/logs?login=0" class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd">
+          <image class="ccsImage" src="../../images/exit.png"></image>
+          <text>退出登录</text>
+        </view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+    <view class="weui-footer">
+      <view class="weui-footer__links">
+          <navigator url="" class="weui-footer__link" >杭州领华科技有限公司</navigator>
+      </view>
+      <view class="weui-footer__text">Copyright © 2017-2018 56linker.com</view>
+    </view>
+  </view>
+</view>

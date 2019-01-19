@@ -1,0 +1,26 @@
+<view class="page__bd">
+      <view class='page__bd__imation'>
+        <view class="weui-cell__bd">
+          <text decode="{{true}}" class='text-te'> 企业名称 : </text>
+          <text>{{selfMessage.name}}</text>
+        </view>
+        <view class="weui-cell__bd">联系人 :
+          <text>{{selfMessage.linkman}}</text>
+        </view>
+        <view class="weui-cell__bd">联系电话 :
+          <text>{{selfMessage.linkmanMobile}}</text>
+        </view>
+        <view class="weui-cell__bd">企业所在地 :
+          <text>{{selfMessage.address}}</text>
+        </view>
+        <view class="weui-cell__bd">注册时间 :
+          <text>{{selfMessage.registerTime}}</text>
+        </view>
+        <view class="weui-cell__bd">开通时间 :
+          <text>{{selfMessage.openTime}}</text>
+        </view>
+         <view class="weui-cell__bd">会员有效期 :
+          <text>{{selfMessage.expireEndTime}}</text>
+        </view>
+      </view>
+    </view>

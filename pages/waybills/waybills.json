@@ -1,0 +1,7 @@
+  {
+        "navigationBarTitleText": "运单管理",
+    "onReachBottomDistance": 0,
+    "component": true,
+    "enablePullDownRefresh": false,
+    "disableScroll": false
+  }

@@ -1,0 +1,261 @@
+<view class="page__bd">
+
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>基本信息
+      <view class="weui-cell__ft inline-block">
+        <block wx:if="{{waybillDetailsFun.status==1}}">
+          <text class='J-Golden'>未装车</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==5}}">
+          <text class='J-Golden'>等待发车</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==10}}">
+          <text class='J-Golden'>运输中</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==15}}">
+          <text class='J-Golden'>已到达</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==-1}}">
+          <text class='J-Golden'>作废</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==25}}">
+          <text class='J-completed'>已签收</text>
+        </block>
+        <block wx:elif="{{waybillDetailsFun.status==100}}">
+          <text class='J-completed'>到站运单</text>
+        </block>
+      </view>
+    </view>
+    <view class="page-cell-title">
+      运单号：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.waybillNo}}'>{{waybillDetailsFun.waybillNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      发到站：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.beginSiteName}}'> {{waybillDetailsFun.beginSiteName}}--</view>
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.endSiteName}}'>{{waybillDetailsFun.endSiteName}}</view>
+    </view>
+    <view class="page-cell-title">
+      途经：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.endNetworkName}}'>{{waybillDetailsFun.endNetworkName}}</view>
+    </view>
+    <view class="page-cell-title">
+      委托单号：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.outWaybillNo}}'>{{waybillDetailsFun.outWaybillNo}}</view>
+    </view>
+    <view class="page-cell-title">
+      开单日期：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.billTime}}'>{{waybillDetailsFun.billTime}}</view>
+    </view>
+    <view class="page-cell-title">
+      发货方：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consignorName}}'>{{waybillDetailsFun.consignorName}}</view>
+    </view>
+    <view class="page-cell-title">
+      发货人手机：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consignorLinkmanMobile}}'>{{waybillDetailsFun.consignorLinkmanMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      发货地址：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consignorAddress}}'>{{waybillDetailsFun.consignorAddress}}</view>
+    </view>
+    <view class="page-cell-title">
+      收货方：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consigneeName}}'>{{waybillDetailsFun.consigneeName}}</view>
+    </view>
+    <view class="page-cell-title">
+      收货人手机：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consigneeLinkmanMobile}}'>{{waybillDetailsFun.consigneeLinkmanMobile}}</view>
+    </view>
+    <view class="page-cell-title">
+      收货地址：
+      <view class=" inline-block" wx:if='{{waybillDetailsFun.consigneeAddress}}'>{{waybillDetailsFun.consigneeAddress}}</view>
+    </view>
+  </view>
+  <view class="page__cell ThreePoints">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>货物信息
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>货物名称：
+        <view class=" inline-block" wx:if='{{waybillDetailsFun.goodsName}}'>{{waybillDetailsFun.goodsName}}</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>件数：
+        <view class=" inline-block">{{waybillDetailsFun.goodsNum}}件</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+       <view class='page-cell-titleRight'>包装方式：
+        <view class=" inline-block" wx:if=' {{waybillDetailsFun.pack}}'>{{waybillDetailsFun.pack}}</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>体积：
+        <view class=" inline-block"  wx:if='{{waybillDetailsFun.goodsBulk}}'>{{waybillDetailsFun.goodsBulk}}立方</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>重量：
+        <view class=" inline-block" wx:if='{{waybillDetailsFun.goodsWeight}}'>{{waybillDetailsFun.goodsWeight}}千克</view>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell ThreePoints">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>费用
+      <view class='Total'>合计：
+        <view class=" inline-block J-Golden">{{waybillDetailsFun.totalFee?waybillDetailsFun.totalFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>运费：
+        <view class=" inline-block">{{waybillDetailsFun.specialFee?waybillDetailsFun.specialFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>提货费:
+        <view class=" inline-block">{{waybillDetailsFun.pickFee?waybillDetailsFun.pickFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>送货费：
+        <view class=" inline-block" >{{waybillDetailsFun.deliverFee?waybillDetailsFun.deliverFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>装卸费：
+        <view class=" inline-block">{{waybillDetailsFun.loadFee?waybillDetailsFun.loadFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>上楼费：
+        <view class=" inline-block">{{waybillDetailsFun.upFee?waybillDetailsFun.upFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>垫付费：
+        <view class=" inline-block">{{waybillDetailsFun.ddfFee?waybillDetailsFun.ddfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>进仓费：
+        <view class=" inline-block">{{waybillDetailsFun.storeFee?waybillDetailsFun.storeFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>货物价值：
+        <view class=" inline-block">{{waybillDetailsFun.goodsValue?waybillDetailsFun.goodsValue:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>保价费：
+        <view class=" inline-block">{{waybillDetailsFun.insuranceFee?waybillDetailsFun.insuranceFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'></view>
+    </view>
+  </view>
+  <view class="page__cell ThreePoints">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>付款方式
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>付款方式：
+        <view class=" inline-block" wx:if='{{waybillDetailsFun.payType}}'>{{waybillDetailsFun.payType}}</view>
+        
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>现付：
+        <view class=" inline-block">{{waybillDetailsFun.xfFee?waybillDetailsFun.xfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>到付：
+        <view class=" inline-block">{{waybillDetailsFun.dfFee?waybillDetailsFun.dfFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>回付：
+        <view class=" inline-block">{{waybillDetailsFun.hfFee?waybillDetailsFun.hfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>月结：
+        <view class=" inline-block">{{waybillDetailsFun.yjFee?waybillDetailsFun.yjFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>欠付：
+        <view class=" inline-block">{{waybillDetailsFun.qfFee?waybillDetailsFun.qfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>现返：
+        <view class=" inline-block">{{waybillDetailsFun.rebateXfFee?waybillDetailsFun.rebateXfFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>欠返：
+        <view class=" inline-block">{{waybillDetailsFun.rebateQfFee?waybillDetailsFun.rebateQfFee:0}}元</view>
+      </view>
+    </view>
+  </view>
+  <view class="page__cell ThreePoints">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>其他
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>交接方式：
+        <view class=" inline-block">{{waybillDetailsFun.deliveryType}}</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>回单：
+        <view class=" inline-block">{{waybillDetailsFun.receiptNum?waybillDetailsFun.receiptNum:0}}份</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>代收货款：
+        <view class=" inline-block">{{waybillDetailsFun.goodsFee?waybillDetailsFun.goodsFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>贷款手续费：
+        <view class=" inline-block">{{waybillDetailsFun.goodsServiceFee?waybillDetailsFun.goodsServiceFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>异常费：
+        <view class=" inline-block">{{waybillDetailsFun.exceptionFee?waybillDetailsFun.exceptionFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+    
+    </view>
+    <view class="page-cell-title ">
+   
+     备注：
+        <view class=" inline-block" wx:if='{{waybillDetailsFun.memo}}'>{{waybillDetailsFun.memo}}</view>
+    
+    </view>
+  </view>
+</view>

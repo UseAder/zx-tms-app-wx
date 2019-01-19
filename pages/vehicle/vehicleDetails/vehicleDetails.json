@@ -1,0 +1,6 @@
+  {
+    "component": true,
+    "enablePullDownRefresh": false,
+    "disableScroll": false,
+    "navigationBarTitleText": "配载详情"
+  }

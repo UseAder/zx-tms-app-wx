@@ -1,0 +1,39 @@
+<view class="page__bd Statistics">
+  <view class="page__cell ">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>利润概况
+    </view>
+    <view class="page-cell-bd ">
+      <view class="page-cell-bd-left ">
+        <view>今日
+        </view>
+        <view>
+          <text class='J-Golden'>{{networkWdlrFun.dayTj?networkWdlrFun.dayTj:0}}元</text>  
+        </view>
+      </view>
+      <view class="page-cell-bd-center ">
+        <view>本周
+        </view>
+        <view>  <text class='J-Golden'>{{networkWdlrFun.weekTj?networkWdlrFun.weekTj:0}}元</text>
+         
+        </view>
+      </view>
+      <view class="page-cell-bd-right ">
+        <view>本月
+        </view>
+        <view>
+         <text class='J-Golden'>{{networkWdlrFun.monthTj?networkWdlrFun.monthTj:0}}元</text>
+        </view>
+      </view>
+    </view>
+  </view>
+    <view class="page__cell " wx:if="{{networkWdlrFun.cartTotalProfit[0]}}">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>
+       <view class=" inline-block" >最近一月网点日利润走势图-总</view>
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+      <canvas canvas-id="lineCanvas"  class="canvas"  disable-scroll="true"  bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+</view>

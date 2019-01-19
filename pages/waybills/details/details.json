@@ -1,0 +1,7 @@
+  {
+    "navigationBarTitleText": "运单详情",
+    "onReachBottomDistance": 0,
+    "component": true,
+    "enablePullDownRefresh": false,
+    "disableScroll": false
+  }

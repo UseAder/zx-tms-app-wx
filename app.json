@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/vehicle/vehicleDetails/vehicleDetails",
+    "pages/home/home",
+    "pages/home/weeklyStatistics/weeklyStatistics",
+    "pages/home/searchWord/searchWord",
+    "pages/customerRanking/customerRanking",
+    "pages/vehicle/vehicle",
+    "pages/receivable/receivable",
+    "pages/dot/dot",
+    "pages/waybills/details/details",
+    "pages/waybills/waybills",
+    "pages/customerProfit/customerProfit",
+    "pages/netProfit/netProfit",
+    "pages/cart/cart",
+    "pages/dotTurnover/dotTurnover",
+    "pages/deliverGoods/deliverGoods",
+    "pages/Arrival/Arrival",
+    "pages/line/line",
+    "pages/myinfor/myinfor",
+    "pages/myinfor/imation/imation",
+    "pages/logs/logs",
+    "pages/waybills/details/waybill/waybill",
+    "pages/waybills/details/cost/cost",
+    "pages/waybills/details/transport/transport",
+    "pages/waybills/details/track/track",
+    "pages/waybills/details/return/return",
+    "pages/waybills/details/abnormal/abnormal",
+    "pages/waybills/details/changelist/changelist",
+    "pages/waybills/details/warehouse/warehouse",
+    "pages/waybills/details/payment/payment",
+    "pages/waybills/details/settlement/settlement",
+    "pages/waybills/details/message/message"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#003573",
+    "navigationBarTitleText": "专线助手",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "color": "#84888e",
+    "selectedColor": "#4775ff",
+    "backgroundColor": "#fff",
+    "borderStyle": "#aeaeae",
+    "list": [
+      {
+        "selectedIconPath": "images/home1.png",
+        "iconPath": "images/home.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/waybills1.png",
+        "iconPath": "images/waybills.png",
+        "pagePath": "pages/waybills/waybills",
+        "text": "运单"
+      },
+      {
+        "selectedIconPath": "images/myinfor1.png",
+        "iconPath": "images/myinfor.png",
+        "pagePath": "pages/myinfor/myinfor",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

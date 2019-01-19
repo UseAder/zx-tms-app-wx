@@ -1,0 +1,257 @@
+<view class="page__bd ">
+  <block wx:if='{{waybillSettlementFun.xfFee||waybillSettlementFun.dfFee||waybillSettlementFun.hfFee||waybillSettlementFun.yjFee||waybillSettlementFun.qfFee||waybillSettlementFun.goodsFee||waybillSettlementFun.rebateXfFee||waybillSettlementFun.rebateQfFee||waybillSettlementFun.transitFee}}'>
+    <view class="page__cell ThreePoints settlement" style="margin-bottom: 0;">
+      <view class='page-cell-title-frist'>
+        <view class="page-cell-title ">
+          <view class='inline-block xian'></view>费用
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.xfFee}}'>
+      <view class="page-cell-title " style='height:auto'>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：现付</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.xfFee?waybillSettlementFun.xfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceXfFee?waybillSettlementFun.balanceXfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceXfFee?waybillSettlementFun.unBalanceXfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.dfFee}}'>
+      <view class="page-cell-title " style='height:auto'>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：到付</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.dfFee?waybillSettlementFun.dfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceDfFee?waybillSettlementFun.balanceDfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceDfFee?waybillSettlementFun.unBalanceDfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.hfFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：回付</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.hfFee?waybillSettlementFun.hfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceHfFee?waybillSettlementFun.balanceHfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceHfFee?waybillSettlementFun.unBalanceHfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.yjFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：月结</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.yjFee?waybillSettlementFun.yjFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceYjFee?waybillSettlementFun.balanceYjFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceYjFee?waybillSettlementFun.unBalanceYjFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.qfFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：欠付</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.qfFee?waybillSettlementFun.qfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceQfFee?waybillSettlementFun.balanceQfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceQfFee?waybillSettlementFun.unBalanceQfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.goodsFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：代收货款</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.goodsFee?waybillSettlementFun.goodsFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceGoodsFee?waybillSettlementFun.balanceGoodsFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceGoodsFee?waybillSettlementFun.unBalanceGoodsFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.rebateXfFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：现返</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.rebateXfFee?waybillSettlementFun.rebateXfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceRebateXfFee?waybillSettlementFun.balanceRebateXfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceRebateXfFee?waybillSettlementFun.unBalanceRebateXfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.rebateQfFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：欠返</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.rebateQfFee?waybillSettlementFun.rebateQfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceRebateQfFee?waybillSettlementFun.balanceRebateQfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceRebateQfFee?waybillSettlementFun.unBalanceRebateQfFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+    <view class="page__cell ThreePoints settlement" wx:if='{{waybillSettlementFun.transitFee}}'>
+
+      <view class="page-cell-title " style='height:auto'>
+
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft settlementColor'>
+          <view class='inline-block yuan'></view>费用项目：中转费</view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>费用：
+          <view class="inline-block">{{waybillSettlementFun.transitFee?waybillSettlementFun.transitFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>已结费用：
+          <view class="inline-block">{{waybillSettlementFun.balanceTransitFee?waybillSettlementFun.balanceTransitFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>未结费用：
+          <view class="inline-block">{{waybillSettlementFun.unBalanceTransitFee?waybillSettlementFun.unBalanceTransitFee:0}}元</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+
+    <view class='noInformationForTheTimeBeing'>
+
+      
+    </view>
+  </block>
+</view>

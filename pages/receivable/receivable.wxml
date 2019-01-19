@@ -1,0 +1,83 @@
+<view class="page__bd Statistics">
+  <view class="page__cell ThreePoints" wx:for="{{customerKhphSfFun}}" wx:key="item">
+    <view class="page-cell-renHeader ">
+      <view class='Total'>
+        <view class=" inline-block">
+          <image src='{{kehu}}'></image>
+        </view>
+        <view class=" inline-block" wx:if='{{item.consignorName}} '>{{item.consignorName}} </view>
+        <view class=" inline-block" wx:if=' {{item.consignorLinkmanMobile}}'> {{item.consignorLinkmanMobile}}</view>
+      </view>
+    </view>
+    <view class="page-cell-title">
+      <view class='Total'>合计：
+        <text class='J-Golden'>{{item.totalProfitFee?item.totalProfitFee:0}}元</text>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>现付：
+        <view class=" inline-block">{{item.xfFee?item.xfFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>到付：
+        <view class=" inline-block">{{item.dfFee?item.dfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>月结：
+        <view class=" inline-block">{{item.yjFee?item.yjFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>回付：
+        <view class=" inline-block">{{item.hfFee?item.hfFee:0}}元</view>
+      </view>
+    </view>
+    <view class="page-cell-title ">
+      <view class='page-cell-titleLeft'>欠付：
+        <view class=" inline-block">{{item.qfFee?item.qfFee:0}}元</view>
+      </view>
+      <view class='SegmentingLine'>
+        <text></text>
+      </view>
+      <view class='page-cell-titleRight'>货款手续费：
+        <view class=" inline-block">{{item.goodsServiceFee?item.goodsServiceFee:0}}元</view>
+      </view>
+    </view>
+    <view class="copeWith ">
+      应收：
+      <text class='J-Golden'>{{item.mainCampInFee?item.mainCampInFee:0}}元</text>
+    </view>
+    <view class='page-cell-renFooter'>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>异常费：
+          <view class=" inline-block">{{item.exceptionFee?item.exceptionFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>现返：
+          <view class=" inline-block">{{item.rebateXfFee?item.rebateXfFee:0}}元</view>
+        </view>
+      </view>
+      <view class="page-cell-title ">
+        <view class='page-cell-titleLeft'>欠返：
+          <view class=" inline-block">{{item.rebateQfFee?item.rebateQfFee:0}}元</view>
+        </view>
+        <view class='SegmentingLine'>
+          <text></text>
+        </view>
+        <view class='page-cell-titleRight'>代收款：
+          <view class=" inline-block">{{item.goodsFee?item.goodsFee:0}}元</view>
+        </view>
+      </view>
+      <view class="copeWith ">
+        应付：
+        <text class='J-Golden'>{{item.mainCampOutFee?item.mainCampOutFee:0}}元</text>
+      </view>
+    </view>
+  </view>
+</view>

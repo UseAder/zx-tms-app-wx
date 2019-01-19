@@ -1,0 +1,60 @@
+.page__bd {
+  margin: 0;background: #f8f8f8
+}
+
+.Total, .copeWith {
+  font-weight: 700;
+  padding-left: 0 !important;
+}
+.page-cell-renHeader {
+  border-bottom: 1px solid #eee;
+}
+
+.page-cell-renHeader .Total {
+  margin: 0rpx 0 0rpx 38rpx;
+  line-height: 70rpx;
+  height: 70rpx;
+}
+
+.page-cell-renHeader .Total image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.page-cell-renHeader .Total .inline-block {
+  margin-right: 20rpx;
+}
+
+.page-cell-titleLeft {
+  margin-left: 18rpx;
+  box-sizing: border-box;
+}
+
+.page-cell-titleLeft, .page-cell-titleRight {
+  border-bottom: 1px solid #ececec;
+}
+
+.copeWith {
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: right;
+  padding-right: 54rpx;
+}
+
+.page-cell-renFooter .page-cell-title {
+  display: flex !important;
+  margin-left: 0rpx !important;
+}
+
+.page-cell-renFooter {
+  border-top: 1px solid #eee;
+  margin: 0rpx 0 0rpx 38rpx;
+}
+
+.SegmentingLine {
+left:349rpx;
+
+}
+.page-cell-titleLeft, .page-cell-titleRight {
+width: 300rpx
+}

@@ -1,0 +1,66 @@
+<view class="page__bd page__bd-quan changelist">
+  <block wx:if='{{waybillChangelistFun!=""}}'>
+    <view class='pageChangeList' wx:for="{{waybillChangelistFun}}" wx:key="item">
+      <view class="page__cell message">
+        <view class='page-cell-title-frist'>
+          <view class="page-cell-title ">
+            <view class='inline-block xian'></view>
+            <view class=" inline-block" wx:if='{{item.createTime}}'>{{item.createTime}}</view>
+            <view class="weui-cell__ft inline-block">
+              <block wx:if="{{item.status==1}}">
+                <text class='J-Golden'>待审核</text>
+              </block>
+              <block wx:else>
+                <text class='J-completed'>已审核</text>
+              </block>
+            </view>
+          </view>
+        </view>
+        <view class="page-cell-title">
+          改单原因：
+          <view class=" inline-block" wx:if='{{item.auditMemo}}'>{{item.auditMemo}}</view>
+        </view>
+        <view class="page-cell-title">
+          审核时间：
+          <view class=" inline-block" wx:if='{{item.auditTime}}'>{{item.auditTime}}</view>
+        </view>
+        <view class="page-cell-title">
+          审核人：
+          <view class=" inline-block" wx:if='{{item.auditEmployeeName}}'>{{item.auditEmployeeName}}</view>
+
+        </view>
+        <view class='changelist-table'>
+          <view class='changelist-table-left'>
+            <view class='changelist-table-th'>修改项
+            </view>
+            <view class='changelist-table-td' wx:for="{{item.changeList}}" wx:key="item">
+              <view class=" inline-block" wx:if='{{item.contentDes}}'>{{item.contentDes}}</view>
+            </view>
+          </view>
+          <view class='changelist-table-center'>
+            <view class='changelist-table-th'>修改前
+            </view>
+            <view class='changelist-table-td' wx:for="{{item.changeList}}" wx:key="item">
+              <view class=" inline-block" wx:if='{{item.beforeValue}}'>{{item.beforeValueDes}}</view>
+            </view>
+          </view>
+          <view class='changelist-table-right'>
+            <view class='changelist-table-th'>
+              修改后
+            </view>
+            <view class='changelist-table-td' wx:for="{{item.changeList}}" wx:key="item">
+              <view class=" inline-block" wx:if='{{item.afterValue}}'>{{item.afterValueDes}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+
+    <view class='noInformationForTheTimeBeing'>
+
+      
+    </view>
+  </block>
+</view>

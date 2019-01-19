@@ -1,0 +1,17 @@
+<view class="page__bd Statistics">
+  <view class="page__cell " wx:for="{{weeklyStatisticsFun.arrayList}}" wx:key="item" wx:if="{{weeklyStatisticsFun.arrayList[index]!=''}}">
+    <view class="page-cell-title ">
+      <view class='inline-block xian'></view>
+      <view class=" inline-block" wx:if='{{index==0}}'>一周发货 单量 走势</view>
+      <view class=" inline-block" wx:if='{{index==1}}'>一周发货 运费 走势</view>
+        <view class=" inline-block" wx:if='{{index==2}}'>一周发货 重量 走势</view>
+      <view class=" inline-block" wx:if='{{index==3}}'>一周发货 体积 走势</view>
+       <view class=" inline-block" wx:if='{{index==4}}'>一周发货 库存量 走势</view>
+      <view class=" inline-block" wx:if='{{index==5}}'>一周发货 发车量 走势</view>
+    </view>
+    <view class="page-cell-bd page-cell-bdCanvas">
+      <canvas canvas-id="{{'lineCanvas'+index}}" class="canvas"  data-canvasName="{{'lineCanvas'+index}}"  bindtouchstart="touchHandler"></canvas>
+    </view>
+  </view>
+  
+</view>

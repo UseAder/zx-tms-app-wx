@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客户排行",
+  "component": true,
+  "onReachBottomDistance": 20,
+  "usingComponents": {}
+}
